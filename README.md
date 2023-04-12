@@ -11,5 +11,5 @@ Debe ser:
 - Contener algún guion bajo
 
 >**NOTA**: La inexperiencia en TDD nos hace programar cada caso de uso por separado, pero debe realizarse como un todo, ya que si no tendremos tests que validarán funciones privadas del módulo.
->El objetivo tener tests sobre la función pública _isStrongPassword()_.
+>El objetivo es tener tests sobre la función pública _isStrongPassword()_.
 
