@@ -22,4 +22,7 @@ describe("The Password validator..", ()=>{
     it("fails when password does not contain any number", ()=>{
         expect(isStrongPassword('abcdABCD_')).toBe(false);
     });
+    it("fails when password does not contain any lowercase character", ()=>{
+        expect(isStrongPassword('1234ABCD_')).toBe(false);
+    });
 });
