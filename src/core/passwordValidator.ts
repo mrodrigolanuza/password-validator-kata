@@ -1,9 +1,17 @@
 export function isStrongPassword(password:string):boolean{
-    if(password.length < 6)
+    if(hasNotMinimunLength(password))
         return false;
     
-    const regex = /\d/;
-    if(!regex.test(password))
+    if(notIncludesAnyNumber(password))
         return false;
+    
     return true;
+}
+
+function hasNotMinimunLength(password:string){
+    return password.length < 6;
+}
+
+function notIncludesAnyNumber(password:string){
+    return !/\d/.test(password);
 }
