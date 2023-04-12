@@ -1,38 +1,27 @@
 export function isStrongPassword(password:string):boolean{
-    if(hasNotMinimunLength(password))
-        return false;
-    
-    if(notIncludesAnyNumber(password))
-        return false;
-
-    if(notIncludesAnyLowercaseCharacter(password))
-        return false;
-    
-    if(notIncludesAnyUppercaseCharacter(password))
-        return false;
-
-    if(notIncludesAnyUnderscoreCharacter(password))
-        return false;
-        
-    return true;
+    return hasMinimunLength(password) && 
+           includesSomeNumber(password) && 
+           includesSomeLowercaseCharacter(password) && 
+           includesSomeUppercaseCharacter(password) &&
+           includesSomeUnderscoreCharacter(password);
 }
 
-function hasNotMinimunLength(password:string){
-    return password.length < 6;
+function hasMinimunLength(password:string){
+    return password.length >= 6;
 }
 
-function notIncludesAnyNumber(password:string){
-    return !/\d/.test(password);
+function includesSomeNumber(password:string){
+    return /\d/.test(password);
 }
 
-function notIncludesAnyLowercaseCharacter(password:string){
-    return !/[a-z]/.test(password);
+function includesSomeLowercaseCharacter(password:string){
+    return /[a-z]/.test(password);
 }
 
-function notIncludesAnyUppercaseCharacter(password:string){
-    return !/[A-Z]/.test(password);
+function includesSomeUppercaseCharacter(password:string){
+    return /[A-Z]/.test(password);
 }
 
-function notIncludesAnyUnderscoreCharacter(password:string){
-    return password.indexOf('_') <= 0;
+function includesSomeUnderscoreCharacter(password:string){
+    return password.indexOf('_') > 0;
 }
