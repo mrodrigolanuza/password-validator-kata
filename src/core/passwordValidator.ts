@@ -11,6 +11,9 @@ export function isStrongPassword(password:string):boolean{
     if(notIncludesAnyUppercaseCharacter(password))
         return false;
 
+    if(notIncludesAnyUnderscoreCharacter(password))
+        return false;
+        
     return true;
 }
 
@@ -28,4 +31,8 @@ function notIncludesAnyLowercaseCharacter(password:string){
 
 function notIncludesAnyUppercaseCharacter(password:string){
     return !/[A-Z]/.test(password);
+}
+
+function notIncludesAnyUnderscoreCharacter(password:string){
+    return password.indexOf('_') <= 0;
 }
