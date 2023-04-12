@@ -16,4 +16,7 @@ describe("The Password validator..", ()=>{
     it("accepts the password when all requirements are accomplished", ()=>{
         expect(isStrongPassword('1234abcdABCD_')).toBe(true);
     });
+    it("fails when password length is lower than 6 characters", ()=>{
+        expect(isStrongPassword('1aA_')).toBe(false);
+    });
 });
