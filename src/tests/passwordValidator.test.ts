@@ -10,6 +10,10 @@ abcdABCD_ - No tiene números
 
 */
 
-describe("The Password validator should..", ()=>{
-    
+import { isStrongPassword } from "../core/passwordValidator";
+
+describe("The Password validator..", ()=>{
+    it("accepts the password when all requirements are accomplished", ()=>{
+        expect(isStrongPassword('1234abcdABCD_')).toBe(true);
+    });
 });
