@@ -19,4 +19,7 @@ describe("The Password validator..", ()=>{
     it("fails when password length is lower than 6 characters", ()=>{
         expect(isStrongPassword('1aA_')).toBe(false);
     });
+    it("fails when password does not contain any number", ()=>{
+        expect(isStrongPassword('abcdABCD_')).toBe(false);
+    });
 });
